@@ -7,6 +7,7 @@ import TaskList from './components/TaskList';
 import TopBar from './components/TopBar';
 import RightSidebar from './components/RightSideBar';
 import './styles.css'; // Make sure you import your main stylesheet
+import Weather from './components/Weather';
 
 function App() {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -70,7 +71,7 @@ function App() {
 
       <div className="main-layout">
         {/* LEFT SIDEBAR */}
-        {isSidebarOpen && <Sidebar theme={theme}/>}  {/* Conditionally render Sidebar */}
+        {isSidebarOpen && <Sidebar theme={theme} />}  {/* Conditionally render Sidebar */}
 
         {/* CONTENT AREA */}
         <div className="content-area">
@@ -82,6 +83,9 @@ function App() {
               setIsRightSidebarOpen(true);
             }}
           />
+          <div>
+            <Weather />
+          </div>
         </div>
 
         {/* RIGHT SIDEBAR */}
@@ -90,6 +94,7 @@ function App() {
           onClose={handleCloseRightSidebar}
           selectedTask={selectedTask}
         />
+
       </div>
     </div>
   );
