@@ -1,0 +1,154 @@
+/* General Sidebar Styles */
+.sidebar-leftss {
+    width: 260px;
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 🌑 Dark Theme */
+.sidebar-leftss.dark {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* ☀️ Light Theme */
+.sidebar-leftss.light {
+    background-color: #f9f9f9;
+    color: black;
+}
+
+/* User Profile */
+.profile-leftss {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px; /* Adds space between image and text */
+}
+
+.profile-image {
+    width: 80px;  /* Adjust size as needed */
+    height: 80px;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures image fills the area */
+}
+
+.profile-leftss h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Navigation Section */
+.nav-section-leftss {
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.sidebar-leftss.dark .nav-section-leftss {
+    background-color: #2a2a2a;
+}
+
+/* Sidebar List */
+.sidebar-list-leftss {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-item-leftss {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-item-leftss:hover {
+    background-color: #e0e0e0;
+}
+
+.sidebar-leftss.dark .sidebar-item-leftss:hover {
+    background-color: #3a3a3a;
+}
+
+/* Active Item */
+.sidebar-item-leftss.active {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.sidebar-item-leftss.active:hover {
+    background-color: #27ae60;
+}
+
+/* Task Summary */
+.task-summary-leftss {
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: auto;
+}
+
+.sidebar-leftss.dark .task-summary-leftss {
+    background-color: #2a2a2a;
+}
+
+/* Task Summary Header */
+.summary-header-leftss {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Task Count */
+.task-summary-leftss h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Task Summary Legend */
+.legend-leftss {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.legend-leftss .pending-leftss {
+    color: #a3e4d7;
+}
+
+.legend-leftss .done-leftss {
+    color: #2ecc71;
+}
+
+/* Logout Button */
+.logout-leftss {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 16px;
+}
+
+.logout-leftss:hover {
+    background-color: #c0392b;
+}

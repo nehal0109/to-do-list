@@ -1,0 +1,619 @@
+/* -----------------------------------------------------
+   GLOBAL & THEME
+----------------------------------------------------- */
+
+/* Global reset or minimal */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Dark theme background/text */
+.dark-theme {
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+.light-theme {
+    background-color: #f5f5f5;
+    color: white;
+}
+
+/* -----------------------------------------------------
+     LAYOUT
+----------------------------------------------------- */
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-layout {
+    display: flex;
+    flex: 1;
+}
+
+/* -----------------------------------------------------
+     CONTENT AREA
+----------------------------------------------------- */
+
+.content-area {
+    flex: 1;
+    padding: 20px;
+    background-color: #1c1c1c;
+    /* Dark default */
+    overflow-y: auto;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* -----------------------------------------------------
+     TASK INPUT
+----------------------------------------------------- */
+
+.task-input-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.task-input-container input {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+}
+
+.priority-select {
+    margin-right: 10px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 8px;
+}
+
+.task-input-container button {
+    background-color: #4caf50;
+    border: none;
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* -----------------------------------------------------
+     TASK LIST & TASK ITEM
+----------------------------------------------------- */
+
+.task-list-container {
+    margin-top: 10px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2b2b2b;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.task-item.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.task-info {
+    display: flex;
+    align-items: center;
+}
+
+.task-info span {
+    margin-left: 8px;
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+}
+
+.priority-badge {
+    margin-right: 10px;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* -----------------------------------------------------
+     TASK DETAILS PANEL
+----------------------------------------------------- */
+
+.task-details-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    padding: 20px;
+}
+
+/* -----------------------------------------------------
+     WEATHER
+----------------------------------------------------- */
+
+.weather-container {
+    display: flex;
+    align-items: center;
+}
+
+.weather-input input {
+    width: 120px;
+    margin-right: 10px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 5px;
+}
+
+/* -----------------------------------------------------
+     LOGIN
+----------------------------------------------------- */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+}
+
+.login-container button {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* -----------------------------------------------------
+     TOP BAR
+----------------------------------------------------- */
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures left and right content are separated */
+    background-color: #1c1c1c; /* Dark default */
+    padding: 0 20px;
+    height: 60px;
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Ensures it takes up remaining space to push right content */
+}
+
+.hamburger-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 15px; /* Adds spacing between hamburger and logo */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+}
+
+.icon-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    margin: 0 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.icon-button:hover {
+    opacity: 0.8;
+}
+
+/* -----------------------------------------------------
+     RIGHT SIDEBAR
+----------------------------------------------------- */
+
+.right-sidebar {
+    position: fixed;
+    right: -320px;
+    /* Hidden off-screen by default */
+    top: 0;
+    width: 320px;
+    height: 100%;
+    background-color: #2b2b2b;
+    /* Dark default */
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+
+.right-sidebar.open {
+    right: 0;
+    /* Slides in */
+}
+
+.right-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #333;
+    border-bottom: 1px solid #444;
+}
+
+.close-btn {
+    font-size: 1.2rem;
+}
+
+.right-sidebar-content {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+/* -----------------------------------------------------
+     LEFT SIDEBAR (Moved to Bottom)
+----------------------------------------------------- */
+
+.sidebar-leftss {
+    width: 240px;
+    background-color: #2b2b2b;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+/* Sidebar toggling */
+.sidebar-leftss.open {
+    transform: translateX(0);
+}
+
+.sidebar-leftss.closed {
+    transform: translateX(-240px);
+}
+
+/* Sidebar user section */
+.profile-leftss {
+    text-align: center;
+}
+
+.profile-leftss h3 {
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+.sidebar-list-leftss {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.sidebar-item-leftss {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar-item-leftss.active {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+/* Task summary section */
+.task-summary-leftss {
+    padding: 10px;
+    text-align: center;
+}
+
+.summary-header-leftss {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legend-leftss {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.pending-leftss {
+    color: #A3E4D7;
+}
+
+.done-leftss {
+    color: #2ECC71;
+}
+
+/* Logout Button */
+.logout-leftss {
+    background-color: #ff4d4d;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* 🌕 Light Theme Global Overrides */
+.light-theme {
+    background-color: #f5f5f5 !important;
+    color: black !important;
+}
+
+/* Light Theme - Ensure all sections use correct colors */
+.light-theme .content-area {
+    background-color: #f5f5f5 !important;
+    color: white !important;
+}
+
+.light-theme .sidebar {
+    background-color: #ffffff !important;
+    color: white !important;
+}
+
+.light-theme .top-bar {
+    background-color: #e8f5e9 !important;
+    color: black !important;
+}
+
+.light-theme .right-sidebar {
+    background-color: #fafafa !important;
+    color: white !important;
+}
+
+/* 🌕 Light Theme Sidebar */
+.light-theme .sidebar {
+    background-color: #ffffff !important;
+    color: white !important;
+    border-right: 1px solid #ddd !important;
+}
+
+
+/* Default Task Item Styling */
+.task-item {
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* List View - Full width row */
+.task-item.list-view {
+    width: 100%;
+    background-color: #2b2b2b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Card View - Boxed style */
+.task-item.card-view {
+    width: 250px;
+    background-color: #3a3a3a;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.task-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.task-input-container input {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+/* Priority Dropdown */
+.priority-select {
+    padding: 5px;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    font-size: 14px;
+    border: none;
+}
+
+/* Priority Colors */
+.priority-select.high {
+    background: red;
+}
+.priority-select.medium {
+    background: orange;
+}
+.priority-select.low {
+    background: green;
+}
+
+/* Task Icons */
+.task-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.task-icons .icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Add Task Button */
+.add-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.task-list-container {
+    width: 100%;
+  }
+  
+  .active-tasks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Spacing between tasks */
+  }
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #333;
+    border-radius: 8px;
+    width: 200px; /* Ensure it aligns row-wise */
+  }
+  
+  .task-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Style for Star Button */
+  .star-icon {
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .star-icon:hover {
+    color: yellow;
+  }
+  
+  .task-item.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+  }
+  
+  /* 1) Top-level container classes */
+.task-list-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* For "list" mode, stack items in a column or row (per Figma) */
+  .task-list-container.list-mode .active-tasks,
+  .task-list-container.list-mode .completed-tasks {
+    display: flex;
+    flex-direction: column; /* or row if your design needs a horizontal table look */
+    gap: 10px;
+  }
+  
+  /* For "card" mode, display items in a row with wrapping */
+  .task-list-container.card-mode .active-tasks,
+  .task-list-container.card-mode .completed-tasks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  /* 2) Task Item Base Styles */
+  .task-item {
+    background-color: #2b2b2b; /* Dark background for tasks */
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;            /* Checkbox + text on left, star on right */
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  /* If a task is completed, fade and strikethrough */
+  .task-item.completed {
+    opacity: 0.7;
+    text-decoration: line-through;
+  }
+  
+  /* 3) List vs. Card Specific Styles */
+  .task-item.list-view {
+    width: 100%; /* Full width in list mode */
+  }
+  
+  /* In card view, each task is narrower and stacked horizontally */
+  .task-item.card-view {
+    width: 200px;      /* Adjust to match Figma (e.g., 250px) */
+    text-align: center;
+    flex-direction: column; /* Title & star stacked if needed */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 4) Star Icon */
+  .star-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: gold;
+  }
+  
+  .star-icon:hover {
+    color: yellow;
+  }
+  
