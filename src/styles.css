@@ -617,3 +617,46 @@ html {
     color: yellow;
   }
   
+  /* At the bottom of your styles.css, to override everything else */
+.light-theme {
+    background-color: #f5f5f5 !important;
+    color: black !important;
+}
+
+/* Make sure top bar is black text on a light background */
+.light-theme .top-bar,
+.light-theme .top-bar * {
+    background-color: #e8f5e9 !important;
+    color: black !important;
+}
+
+/* Content area in light mode */
+.light-theme .content-area {
+    background-color: #f5f5f5 !important;
+    color: black !important;
+}
+
+/* Sidebar in light mode */
+.light-theme .sidebar,
+.light-theme .sidebar-leftss {
+    background-color: #ffffff !important;
+    color: black !important;
+    border-right: 1px solid #ddd !important;
+}
+
+/* Right sidebar in light mode */
+.light-theme .right-sidebar {
+    background-color: #fafafa !important;
+    color: black !important;
+}
+
+/* Task items in light mode */
+.light-theme .task-item,
+.light-theme .task-item * {
+    color: black !important;
+}
+
+/* Light mode: TaskList container background should be white */
+.light-theme .task-item {
+    background-color: #ffffff !important;
+}
